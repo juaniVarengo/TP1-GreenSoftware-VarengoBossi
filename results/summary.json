@@ -1,0 +1,23 @@
+{
+  "timestamp": "2025-09-02T22:20:05.783792Z",
+  "task": "cpu",
+  "mode": "offline",
+  "country": "ARG",
+  "seconds": 30,
+  "duration_s": 30.038,
+  "emissions_kg": 0.0003836848698658324,
+  "project_name": "TP_Green_Software",
+  "output_csv": "results\\emissions.csv",
+  "notes": "Ejecución con CodeCarbon",
+  "cpu_power": 120.0,
+  "gpu_power": 0.0,
+  "ram_power": 10.0,
+  "cpu_energy": 0.0010002249866627,
+  "gpu_energy": 0.0,
+  "ram_energy": 8.331531055543262e-05,
+  "energy_consumed": 0.0010835402972181325,
+  "emissions": 0.0003836848698658324,
+  "emissions_rate": 1.2786050077430242e-05,
+  "duration": 30.008084399974905,
+  "trees_needed_per_year_equiv": 1.28e-06
+}
