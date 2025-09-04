@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TP Green Software — Alternativa 2 (Python + CodeCarbon)
 
 Este paquete contiene **todo lo necesario** para medir el consumo de energía y las emisiones de CO₂eq
@@ -37,3 +38,6 @@ python measure.py --task baseline --seconds 10 --mode offline --country ARG
 > Equivalencia árboles: 1 árbol ≈ 300 kg CO₂/año. Para una ejecución, **árboles necesarios ≈ emisiones_kg / 300**.
 
 
+=======
+# TP1-GreenSoftware-VarengoBossi
+>>>>>>> 8a3b8dee5cbf66beb34964d914f2710d4a8419fd
