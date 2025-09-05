@@ -120,9 +120,16 @@ def main():
             if key in last and last[key] not in (None, "", "None"):
                 summary[key] = f(last[key])
 
-    # Árboles necesarios 
+    # Árboles necesarios + horas compensadas
     if summary.get("emissions_kg") is not None:
         summary["trees_needed_per_year_equiv"] = round(summary["emissions_kg"] / 300.0, 8)
+
+        # Cálculo de emisiones por hora
+        emissions_per_hour = summary["emissions_kg"] / (summary["duration_s"] / 3600.0)
+
+        # Horas compensadas por árboles (joven: 30 kg/año, adulto: 300 kg/año)
+        summary["hours_compensated_tree_young"] = round(30.0 / emissions_per_hour, 3)
+        summary["hours_compensated_tree_adult"] = round(300.0 / emissions_per_hour, 3)
 
     # Guardar resumen JSON y Markdown
     json_path = os.path.join(args.output, "summary.json")
@@ -147,6 +154,10 @@ def main():
         if "trees_needed_per_year_equiv" in summary:
             f.write(f"- Árboles necesarios (aprox.): **{summary['trees_needed_per_year_equiv']}**  \n")
             f.write("  (Asumiendo 1 árbol ≈ 300 kg CO₂/año)\n")
+        if "hours_compensated_tree_young" in summary:
+            f.write(f"- Horas compensadas (árbol joven, 30 kg/año): **{summary['hours_compensated_tree_young']} h**\n")
+        if "hours_compensated_tree_adult" in summary:
+            f.write(f"- Horas compensadas (árbol adulto, 300 kg/año): **{summary['hours_compensated_tree_adult']} h**\n")
         f.write("\nArchivo detallado: `emissions.csv`\n")
 
     print(f"[OK] Listo. Emisiones (kg CO2eq): {summary.get('emissions_kg','?')}")
@@ -156,3 +167,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
