@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 # TP Green Software — Alternativa 2 (Python + CodeCarbon)
 
-Este paquete contiene **todo lo necesario** para medir el consumo de energía y las emisiones de CO₂eq
+Este paquete contiene lo necesario para medir el consumo de energía y las emisiones de CO₂eq
 de un bloque de código en Python utilizando la librería **[codecarbon]**.
 
 
@@ -20,7 +20,7 @@ tp_green_software_codecarbon/
 ```
 
 ### Ejemplos
-1) **CPU 30s, offline en Argentina (recomendado para la consigna):**
+1) **CPU 30s, offline en Argentina:**
 ```bash
 python measure.py --task cpu --seconds 30 --mode offline --country ARG
 ```
